@@ -1,0 +1,33 @@
+[
+    {   
+        "id": "002londonfashion",
+        "name":"London Fashion",
+        "label":"",
+        "workingHours": ["09:00-19:00", "09:00-19:00", "09:00-18:00", "09:00-19:00", "09:00-19:00", "09:00-15:00", "closed"],
+        "address": "Aleja Wyzwolenia 33",
+        "geo": [14.55382,53.4330345],
+        "pricePerKilo": [ 40, 25, 10, 70, 60, 50]
+
+    },
+    {   
+        "id": "001avanti",
+        "name":"AVANTI",
+        "label":"",
+        "workingHours": ["09:00-19:00", "09:00-19:00", "09:00-18:30", "09:00-19:00", "09:00-19:00", "09:00-15:00", "closed"],
+        "address": "Aleja Jana Pawła II 50",
+        "geo": [14.551559, 53.429224],
+        "pricePerKilo": [ 40, 25, 10, 70, 60, 50]
+
+    },
+    {   
+        "id": "001londonfashion",
+        "name":"London Fashion",
+        "label":"",
+        "workingHours": ["09:00-19:00", "09:00-19:00", "09:00-18:00", "09:00-19:00", "09:00-19:00", "09:00-15:00", "closed"],
+        "address": "Jagiellońska 90",
+        "geo": [14.5441047, 53.4310254],
+        "pricePerKilo": [ 40, 25, 10, 70, 60, 50]
+
+    }
+
+]
