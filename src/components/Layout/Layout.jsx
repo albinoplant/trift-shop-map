@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
                     <Col className="p-0" sm={12} md={6}>
                         <Navbar />
                     </Col>
-                    <Col className="p-0" sm={12} md={6}>
+                    <Col className="p-0" sm={12} md={6} style={{overflow:"hidden"}}>
                         {children}
                     </Col>
                 </Row>
