@@ -25,12 +25,13 @@ const Map = () => {
                 center: [14.550, 53.430],
                 zoom: 10,
                 maxBounds,
-                pitch
+                pitch,
+                attributionControl: false
             });
             map.on('load', () => {
                 setMap(map);
-                map.resize();
                 markerArray.forEach(item => item.addTo(map));
+                map.resize();
             });
         };
         let markerArray = []; 
@@ -63,13 +64,14 @@ const Map = () => {
     }, [map]);
 
     return (
-        <div style={{position: "relative", height: "100vh", width: "100vw"}}>
+        <div style={{position: "relative", width:"100%", height:"100%"}}>
             <div className='mapContainer'
                 ref={el => (mapContainer.current = el)}
                 style={{
-                    height: "100%",
-                    width: "100%",
                     position: "absolute",
+                    top: "0",
+                    width:"100%",
+                    bottom: "0",
                     borderRadius: "1rem"
                 }}
             />

@@ -5,11 +5,11 @@ const primary = '#15de8e'
 
 const Logo = () => (
    <svg
-      width="100"
-      height="75"
+      width="120"
+      height="65"
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      viewBox="0 0 200 150"
+      viewBox="0 10 200 125"
    >
       <g strokeOpacity="1" transform="translate(0 -147)">
          <ellipse
@@ -94,7 +94,6 @@ const Logo = () => (
             wordSpacing="0"
          ></path>
          <g
-            fill={dark}
             fillOpacity="0"
             stroke={primary}
             transform="matrix(2.0191 0 0 2.0191 -108.218 62.459)"
@@ -106,7 +105,6 @@ const Logo = () => (
                transform="scale(.67157) rotate(8.462 234.42 738.776)"
             >
                <path
-                  fill={dark}
                   fillOpacity="0"
                   fillRule="evenodd"
                   stroke={primary}
@@ -124,7 +122,6 @@ const Logo = () => (
             </g>
             <g transform="scale(.67157) rotate(43.601 190.894 129.923)">
                <path
-                  fill={dark}
                   fillOpacity="0"
                   fillRule="evenodd"
                   stroke={primary}
@@ -142,7 +139,6 @@ const Logo = () => (
             </g>
             <g transform="scale(.67157) rotate(74.499 219.625 134.759)">
                <path
-                  fill={dark}
                   fillOpacity="0"
                   fillRule="evenodd"
                   stroke={primary}
@@ -160,7 +156,6 @@ const Logo = () => (
             </g>
             <g transform="matrix(.40355 .5368 -.5368 .40355 140.056 -10.517)">
                <path
-                  fill={dark}
                   fillOpacity="0"
                   fillRule="evenodd"
                   stroke={primary}
