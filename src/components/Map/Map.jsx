@@ -3,10 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import mapboxgl from 'mapbox-gl';
 import "mapbox-gl/dist/mapbox-gl.css";
 // import SelectedMarker from './SelectedMarker';
-import { Container } from 'react-bootstrap';
 import data from '../../data/geo.json'
 import { currentLocation } from '../../actions';
-
 
 
 
@@ -65,7 +63,7 @@ const Map = () => {
     }, [map]);
 
     return (
-        <Container className="m-0 p-0" style={{ position: "relative", maxWidth: "100%", height: "100%", }}>
+        <div style={{position: "relative", height: "100vh", width: "100vw"}}>
             <div className='mapContainer'
                 ref={el => (mapContainer.current = el)}
                 style={{
@@ -74,10 +72,8 @@ const Map = () => {
                     position: "absolute",
                     borderRadius: "1rem"
                 }}
-            >
-            </div>
-
-        </Container>
+            />
+        </div>
     )
 }
 

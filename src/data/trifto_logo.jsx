@@ -3,12 +3,11 @@ import React from 'react';
 const dark = '#222';
 const primary = '#15de8e'
 
-const Logo = ({style}) => (
+const Logo = () => (
    <svg
-      style={style}
+      width="100"
+      height="75"
       xmlns="http://www.w3.org/2000/svg"
-      width="200mm"
-      height="150mm"
       version="1.1"
       viewBox="0 0 200 150"
    >
