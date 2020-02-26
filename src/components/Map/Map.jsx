@@ -3,9 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './marker.css'
+import { markerArray } from './Markers'
 // import SelectedMarker from './SelectedMarker';
-import data from '../../data/geo.json'
-import { currentLocation } from '../../actions';
+// import data from '../../data/geo.json';
+//import { currentLocation } from '../../actions';
 
 
 
@@ -35,36 +36,6 @@ const Map = () => {
                 map.resize();
             });
         };
-
-        let markerArray = []; 
-        data.forEach( item => {
-            const marker = document.createElement('div');
-            const wrapper = document.createElement('div');
-            marker.id =  item.id;
-            marker.classList = 'markers'
-            wrapper.appendChild(marker);
-            const newMarker = new mapboxgl.Marker(wrapper)
-                .setLngLat(item.geo);
-            wrapper.style.backgroundImage=`url(${require( '../../data/mark-trifto.svg')})`;
-            wrapper.style.backgroundSize = 'cover';
-            wrapper.style.width = '140px';
-            wrapper.style.height = '140px';
-            markerArray.push(newMarker);
-        });
-        // const newMarker = new mapboxgl.Marker(marker)
-        //     .setLngLat([14.55382, 53.4330345]);
-        // const marker = document.createElement('div');
-        // marker.className = 'marker';
-        // marker.style.backgroundImage=`url(${require( '../../data/mark-trifto.svg')})`;
-        // marker.style.backgroundSize = 'cover';
-        // marker.style.width = '140px';
-        // marker.style.height = '140px';
-
-        // map.on('move', () => {
-        //     const {lng, lat} = map.getCenter();
-        //     dispatch(currentLocation([lng,lat]));
-        // })
-
         if (!map) initializeMap({ setMap, mapContainer });
     }, [map]);
 

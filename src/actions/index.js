@@ -9,3 +9,15 @@ export const currentLocation = (center) => {
         center: center
     };
 };
+export const markerSelect = (id) => {
+    return {
+        type: 'MARKER_SELECTED',
+        payload: id
+    };
+};
+export const markerDeselect = () => {
+    return {
+        type: 'MARKER_SELECTED',
+        payload: false
+    };
+};
