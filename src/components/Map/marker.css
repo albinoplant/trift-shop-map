@@ -6,3 +6,6 @@
     z-index: 4;
     cursor: pointer;
 }
+.selected{
+ position: absolute;
+}
