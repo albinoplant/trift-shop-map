@@ -15,9 +15,3 @@ export const markerSelect = (id) => {
         payload: id
     };
 };
-export const markerDeselect = () => {
-    return {
-        type: 'MARKER_SELECTED',
-        payload: false
-    };
-};

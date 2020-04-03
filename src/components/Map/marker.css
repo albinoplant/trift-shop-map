@@ -5,7 +5,8 @@
     transform: translateX(45%);
     z-index: 4;
     cursor: pointer;
+    transition: height 1s;
 }
-.selected{
- position: absolute;
+ div.selected {
+    
 }

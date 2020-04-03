@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './marker.css'
-import { markerSelect, markerDeselect } from '../../actions';
+import { markerSelect } from '../../actions';
 
 
 
@@ -57,12 +57,19 @@ const Map = () => {
                 map.resize();
                 setMarkers(document.getElementsByClassName('markers'));
             });
+
         };
         const initializeMarkerClicks = (markers) => {
             for(let i = 0; i < markers.length; i++){
-               markers[i].addEventListener('click', (el) => {
+                if(SELECTED===markers[i].id){
+                    markers[i].classList.add('selected');
+                    }
+                else {
+                    markers[i].classList.remove('selected');
+                }
+                markers[i].addEventListener('click', (el) => {
                     if(SELECTED===el.target.id){
-                        dispatch(markerDeselect())
+                        dispatch(markerSelect(false));
                         el.target.classList.remove('selected');
                         }
                     else {
@@ -72,10 +79,23 @@ const Map = () => {
                 });
             }
         }
+        
+        const flyToMarker = (map, SELECTED) => {
+            const data = require('../../data/szczecin.json');
+            for(let i =0 ; i< data.length; i++){
+                const shop = data[i];
+
+                if(shop.id === SELECTED) map.flyTo({
+                    center: shop.geo,
+                    zoom: 15
+                })
+            }
+        }
         if (!map) initializeMap({ setMap, mapContainer});
         if (markers) {
             setMarkers(document.getElementsByClassName('markers'));
             initializeMarkerClicks(markers);
+            flyToMarker(map, SELECTED)
         };
     }, [map, maxBounds, pitch, markers, SELECTED, dispatch]);
 
@@ -89,7 +109,8 @@ const Map = () => {
                     top: "0",
                     width: "100%",
                     bottom: "0",
-                    borderRadius: "1rem"
+                    minHeight: "300px"
+                    // borderRadius: "1rem"
                 }}
             />
         </div>
