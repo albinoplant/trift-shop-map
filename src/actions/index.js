@@ -1,6 +1,7 @@
-export const initialLocation = () => {
+export const initialLocation = (location) => {
     return {
-        type: 'SZCZECIN_INIT'
+        type: 'INITIATE_LOCATION',
+        location: location
     };
 };
 export const currentLocation = (center) => {

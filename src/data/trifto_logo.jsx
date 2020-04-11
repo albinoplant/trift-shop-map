@@ -1,7 +1,5 @@
 import React from 'react';
-
-const dark = '#222';
-const primary = '#15de8e'
+import color from './color'
 
 const Logo = () => (
    <svg
@@ -15,10 +13,10 @@ const Logo = () => (
          <ellipse
             cx="167.836"
             cy="226.716"
-            fill={dark}
+            fill={color.dark}
             fillOpacity="0"
             fillRule="evenodd"
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeDashoffset="0"
             strokeLinecap="round"
@@ -34,7 +32,7 @@ const Logo = () => (
             style={{ lineHeight: "1.25" }}
             fill="none"
             fillOpacity="1"
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -55,7 +53,7 @@ const Logo = () => (
             style={{ lineHeight: "1.25" }}
             fill="none"
             fillOpacity="1"
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -76,7 +74,7 @@ const Logo = () => (
             style={{ lineHeight: "1.25" }}
             fill="none"
             fillOpacity="1"
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -95,7 +93,7 @@ const Logo = () => (
          ></path>
          <g
             fillOpacity="0"
-            stroke={primary}
+            stroke={color.primary}
             transform="matrix(2.0191 0 0 2.0191 -108.218 62.459)"
          >
             <g
@@ -107,7 +105,7 @@ const Logo = () => (
                <path
                   fillOpacity="0"
                   fillRule="evenodd"
-                  stroke={primary}
+                  stroke={color.primary}
                   strokeDasharray="none"
                   strokeDashoffset="0"
                   strokeLinecap="round"
@@ -124,7 +122,7 @@ const Logo = () => (
                <path
                   fillOpacity="0"
                   fillRule="evenodd"
-                  stroke={primary}
+                  stroke={color.primary}
                   strokeDasharray="none"
                   strokeDashoffset="0"
                   strokeLinecap="round"
@@ -141,7 +139,7 @@ const Logo = () => (
                <path
                   fillOpacity="0"
                   fillRule="evenodd"
-                  stroke={primary}
+                  stroke={color.primary}
                   strokeDasharray="none"
                   strokeDashoffset="0"
                   strokeLinecap="round"
@@ -158,7 +156,7 @@ const Logo = () => (
                <path
                   fillOpacity="0"
                   fillRule="evenodd"
-                  stroke={primary}
+                  stroke={color.primary}
                   strokeDasharray="none"
                   strokeDashoffset="0"
                   strokeLinecap="round"
@@ -176,7 +174,7 @@ const Logo = () => (
             style={{ lineHeight: "1.25" }}
             fill="none"
             fillOpacity="1"
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"

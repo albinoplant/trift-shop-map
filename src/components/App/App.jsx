@@ -1,12 +1,16 @@
 import React from 'react';
-import Map from '../Map/Map'
-import Layout from '../Layout/Layout';
+import Cockpit from '../Cockpit/Cockpit'
+import Location from '../Location/Location'
+import { useSelector, useDispatch } from 'react-redux'
 
-function App() {
+function App() { 
+  const LOCATION = useSelector(state => state.location);
+
   return (
-      <Layout>
-        <Map />
-      </Layout>
+    <React.Fragment>
+      {!LOCATION && <Location/>}
+      {LOCATION &&  <Cockpit/>}
+    </React.Fragment>
   );
 }
 
