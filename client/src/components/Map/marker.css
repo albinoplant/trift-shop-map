@@ -1,0 +1,12 @@
+.markers{
+    position: relative;
+    height: 53%;
+    width: 50%;
+    transform: translateX(45%);
+    z-index: 4;
+    cursor: pointer;
+    transition: height 1s;
+}
+ div.selected {
+    
+}
