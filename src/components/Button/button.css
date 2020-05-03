@@ -1,6 +1,0 @@
-button {
-    transition: border-radius 0.5s;
-}
-button:hover {
-    border-radius: 2rem;
-}
