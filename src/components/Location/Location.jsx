@@ -10,9 +10,9 @@ const Location = () => {
     return ( 
         <React.Fragment>
             <Topbar/>
-            <div style={{margin: '1rem'}}>
+            <div style={{padding:'1rem', backgroundColor: 'rgba(0,0,0,0.05)', zIndex:'0'}}>
                 <h1>Trifto is your trift guide</h1>
-                <p>It brings you all nececery info like where are second hands in your town, price per kilo or day when new stuff arives! </p>
+                <p>It brings you all necessery info like where are second hands in your town, price per kilo or day when new stuff arives! </p>
             </div>
             <div style={{textAlign: 'center',
                         margin: '5rem auto'}}>

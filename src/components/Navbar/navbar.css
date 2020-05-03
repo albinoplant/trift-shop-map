@@ -9,6 +9,7 @@ div.nav-top{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    z-index:100;
 
 }
 /* .list-start{
@@ -27,8 +28,7 @@ div.nav-top{
 } */
 
 ul.shop-list{
-    position: relative;
-    display: block;
+     display: block;
     list-style: none;
     margin: 0;
     /* margin: 1rem; */

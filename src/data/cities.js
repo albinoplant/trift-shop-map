@@ -1,4 +1,5 @@
 const SZCZECIN = {
+    name: 'szczecin',
     lng: 14.550,
     lat: 53.430,
     zoom: 15,
