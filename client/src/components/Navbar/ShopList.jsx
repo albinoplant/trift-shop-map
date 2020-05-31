@@ -1,6 +1,6 @@
 import React from 'react';
 import ShopExtended from './ShopExtended';
-import { markerSelect } from '../../actions';
+import { markerSelect } from '../../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
@@ -8,7 +8,6 @@ const ShopList = ({ shops }) => {
     const SELECTED = useSelector(state => state.isSelected);
     const dispatch = useDispatch();
     useEffect(()=>{
-        console.log(SELECTED)
         const shopElements = document.getElementsByClassName('shop');
         for (const item of shopElements) {
             if( item.id === SELECTED ){

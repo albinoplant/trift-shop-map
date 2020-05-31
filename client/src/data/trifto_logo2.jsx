@@ -1,7 +1,7 @@
 import React from 'react';
 
 const dark = '#222';
-const primary = '#15de8e'
+const primary = '#8f79c5'
 
 const Logo = () => (
    <svg

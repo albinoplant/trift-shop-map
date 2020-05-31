@@ -1,15 +1,12 @@
-import React from 'react';
-import { render } from 'react-dom';
-import './index.css';
-import App from './components/App/App';
-import * as serviceWorker from './components/App/serviceWorker';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import allReducers from './reducers'
+import React from 'react'
+import { render } from 'react-dom'
+import './index.css'
+import App from './components/App/App'
+import { Provider } from 'react-redux'
+import configureStore from './store'
+import 'babel-polyfill'
 
-const store = createStore(
-    allReducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = configureStore()
 
 render(
     <Provider store = {store}>
@@ -17,5 +14,3 @@ render(
     </Provider>,
      document.getElementById('root')
 );
-
-serviceWorker.unregister();

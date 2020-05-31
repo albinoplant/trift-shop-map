@@ -3,12 +3,13 @@ var Shops = require('../models/shops');
 
 var router = express.Router();
 
-router.get('/', function (req, res) {
+router.get('/:city', function (req, res) {
+    var city = req.params.city;
     Shops.retrieveAll(function (err, shops) {
         if (err)
             return res.json(err);
         return res.json(shops);
-    });
+    },city);
 });
 
 router.post('/', function (req, res) {
