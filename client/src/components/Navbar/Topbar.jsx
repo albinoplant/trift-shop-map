@@ -1,7 +1,8 @@
 import React from 'react';
 import Logo from '../../data/trifto_logo'
 
-const Topbar = () => {
+const Topbar = ({city}) => {
+  console.log(city);
     return ( 
       <div className='nav-top'>
         <Logo />
@@ -10,7 +11,7 @@ const Topbar = () => {
           fontSize: '1rem', 
           paddingTop: '1rem' 
           }}
-        >szczecin</h1>
+        >{(city?city:"").toLowerCase()}</h1>
       </div>
      );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import Topbar from "../Navbar/Topbar";
 import ButtonMain from "../Button/ButtonMain";
-import { useDispatch } from "react-redux";
+import { useDispatch} from "react-redux";
 import { initialLocation, fetchShopsIfNeeded } from "../../store/actions";
 import { SZCZECIN } from "../../data/cities";
 
 const Location = () => {
   
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleLocation = (LOCATION) => {
     dispatch(initialLocation(LOCATION));
@@ -16,7 +16,7 @@ const Location = () => {
 
   return (
     <React.Fragment>
-      <Topbar />
+      <Topbar/>
       <div
         style={{
           padding: "1rem",

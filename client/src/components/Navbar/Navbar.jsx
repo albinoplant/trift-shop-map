@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Topbar/>
+      <Topbar city={name}/>
       <ShopList shops={shops} />
     </nav>
   );

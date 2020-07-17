@@ -7,6 +7,18 @@
     cursor: pointer;
     transition: height 1s;
 }
- div.selected {
+ /* div.selected {
     
+} */
+.mapboxgl-user-location-dot{
+    background-color: tomato;
+    border: 0px;
+}
+.mapboxgl-user-location-dot:before{
+    animation: none;
+    background-color: tomato;
+}
+.mapboxgl-user-location-dot:after{
+    border: none;
+    box-shadow: none;
 }

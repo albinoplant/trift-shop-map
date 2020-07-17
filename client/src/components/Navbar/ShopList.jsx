@@ -22,8 +22,8 @@ const ShopList = ({ shops }) => {
             <ul className='shop-list'>
                 {/* <li className="list-start" /> */}
                 {shops.map(shop => (
-                    <li className='shop' key={shop.id} onClick={() => {
-                        const isItemSelected = SELECTED === shop.id ? false : shop.id;
+                    <li className='shop' id={'shop'+shop.id} key={shop.id} onClick={() => {
+                        const isItemSelected = /*SELECTED === shop.id ? false : */shop.id;
                         dispatch(markerSelect(isItemSelected));
                     }}>
                         <h2>

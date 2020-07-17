@@ -33,7 +33,15 @@ const Map = () => {
                 pitch,
                 attributionControl: false
             });
-
+            //Adding geolocation of the user
+            map.addControl(
+                new mapboxgl.GeolocateControl({
+                    positionOptions: {
+                    enableHighAccuracy: true
+                    },
+                    trackUserLocation: true
+                })
+            );
             // Creating empty array to add mapbox-gl markers
             let markerArray = [];
 
@@ -41,7 +49,8 @@ const Map = () => {
                 //In spite of accurate display the SVG box is 2X bigger than the animated icon itself
                 //Clickable area is created inside the wrapper (styled in './marker.css')
                 const marker = document.createElement('div');
-                const wrapper = document.createElement('div');
+                const wrapper = document.createElement('a');//tu był div
+                wrapper.setAttribute('href',`#shop${item.id}`);
                 marker.id = item.id;
                 marker.classList = 'markers';
                 wrapper.appendChild(marker);
@@ -49,8 +58,8 @@ const Map = () => {
                     .setLngLat(item.geo);
                 wrapper.style.backgroundImage = `url(${require('../../data/mark-trifto.svg')})`;
                 wrapper.style.backgroundSize = 'cover';
-                wrapper.style.width = '140px';
-                wrapper.style.height = '140px';
+                wrapper.style.width = '120px';
+                wrapper.style.height = '120px';
                 wrapper.style.transition= 'height 1s, width 1s';
                 markerArray.push(newMarker);
             });
