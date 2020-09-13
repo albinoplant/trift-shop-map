@@ -4,7 +4,7 @@ import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import './marker.css'
 import { markerSelect } from '../../store/actions';
-
+import color from '../../data/color';
 
 const Map = () => {
 
@@ -49,8 +49,8 @@ const Map = () => {
                 //In spite of accurate display the SVG box is 2X bigger than the animated icon itself
                 //Clickable area is created inside the wrapper (styled in './marker.css')
                 const marker = document.createElement('div');
-                const wrapper = document.createElement('a');//tu był div
-                wrapper.setAttribute('href',`#shop${item.id}`);
+                const wrapper = document.createElement('div');//tu był div
+                marker.setAttribute('href',`#shop${item.id}`);
                 marker.id = item.id;
                 marker.classList = 'markers';
                 wrapper.appendChild(marker);
@@ -61,6 +61,11 @@ const Map = () => {
                 wrapper.style.width = '120px';
                 wrapper.style.height = '120px';
                 wrapper.style.transition= 'height 1s, width 1s';
+                const textLabel = document.createElement('h3');
+
+                textLabel.textContent = item.name;
+                textLabel.style.color = color.primaryDark;
+                marker.appendChild(textLabel);
                 markerArray.push(newMarker);
             });
             map.on('load', () => {
@@ -73,35 +78,33 @@ const Map = () => {
         };
         const initializeMarkerClicks = (markers) => {
             for(let i = 0; i < markers.length; i++){
-                if(SELECTED===markers[i].id){
-                    markers[i].classList.add('selected');
-                    }
-                else {
-                    markers[i].classList.remove('selected');
-                }
                 markers[i].addEventListener('click', (el) => {
-                    console.log(el);
                     if(SELECTED===el.target.id){
                         dispatch(markerSelect(false));
-                        el.target.classList.remove('selected');
+                        //el.target.classList.remove('selected');
+                        
                         }
-                    else {
+                    else if(el.target.id) {
                         dispatch(markerSelect(parseInt(el.target.id)));
                         el.target.classList.add('selected');
                     }
                 });
+                if (markers[i].id!==SELECTED)
+                    markers[i].classList.remove('selected');
+                if (markers[i].id==SELECTED)
+                    markers[i].classList.add('selected');
             }
         }
         
         const flyToMarker = (map, SELECTED) => {
-
+            
             for(let i =0 ; i< data.length; i++){
                 const shop = data[i];
 
                 if(shop.id === SELECTED) 
                     map.flyTo({
                         center: shop.geo,
-                        zoom: 15
+                        zoom: 13
                     })
             }
         }
@@ -109,7 +112,7 @@ const Map = () => {
         if (markers) {
             setMarkers(document.getElementsByClassName('markers'));
             initializeMarkerClicks(markers);
-            flyToMarker(map, SELECTED)
+            flyToMarker(map, SELECTED);
         };
     }, [map, CITY, data, lat, lng, zoom, maxBounds, pitch, markers, SELECTED, dispatch]);
 

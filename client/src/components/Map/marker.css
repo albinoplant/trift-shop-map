@@ -1,15 +1,43 @@
 .markers{
+    pointer-events: auto;
     position: relative;
     height: 53%;
     width: 50%;
     transform: translateX(45%);
-    z-index: 4;
     cursor: pointer;
     transition: height 1s;
 }
- /* div.selected {
+.markers h3{ 
+    /* TODO: make the h3 display over the svg marker-icons */
+    position: absolute;
+    display: none;
+    text-align: center;
+    white-space: nowrap;
+    top:-50px;
+    /* color:black!important; */
+    font-weight:bold;
+    text-shadow:
+   -1px -1px 0 #fff,  
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px 1px 0 #fff;
+}
+div.mapboxgl-marker{
+    pointer-events: none;
+    z-index: 0;
+}
+a {
+    text-decoration: none;
     
-} */
+}
+.selected h3{
+    position: absolute;
+    z-index: 1000;
+    display: inline; 
+}
+.selected{
+    z-index: 101!important;
+}
 .mapboxgl-user-location-dot{
     background-color: tomato;
     border: 0px;

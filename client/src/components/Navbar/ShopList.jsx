@@ -23,7 +23,7 @@ const ShopList = ({ shops }) => {
                 {/* <li className="list-start" /> */}
                 {shops.map(shop => (
                     <li className='shop' id={'shop'+shop.id} key={shop.id} onClick={() => {
-                        const isItemSelected = /*SELECTED === shop.id ? false : */shop.id;
+                        const isItemSelected = SELECTED === shop.id ? false : shop.id;
                         dispatch(markerSelect(isItemSelected));
                     }}>
                         <h2>

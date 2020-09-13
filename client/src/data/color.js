@@ -1,5 +1,5 @@
-const primary = '#8f79c5';
-const primaryDark = '#11b875';
+const primary = '#DB6664';
+const primaryDark = '#EB3D4B';
 const dark = '#222';
 
 export default {

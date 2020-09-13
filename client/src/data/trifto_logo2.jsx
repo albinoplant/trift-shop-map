@@ -1,7 +1,7 @@
 import React from 'react';
+import color from './color'
 
-const dark = '#222';
-const primary = '#8f79c5'
+
 
 const Logo = () => (
    <svg
@@ -14,7 +14,7 @@ const Logo = () => (
       <g strokeOpacity="1">
            <path
             opacity="0.5"
-             fill={primary}
+             fill={color.primary}
              fillOpacity="1"
              stroke="none"
              strokeLinecap="butt"
@@ -117,7 +117,7 @@ const Logo = () => (
           style={{ lineHeight: "1.25" }}
           fill="none"
           fillOpacity="1"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -138,7 +138,7 @@ const Logo = () => (
           style={{ lineHeight: "1.25" }}
           fill="none"
           fillOpacity="1"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -159,7 +159,7 @@ const Logo = () => (
           style={{ lineHeight: "1.25" }}
           fill="none"
           fillOpacity="1"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -179,10 +179,10 @@ const Logo = () => (
         <ellipse
           cx="175.719"
           cy="98.275"
-          fill={dark}
+          fill={color.dark}
           fillOpacity="0"
           fillRule="evenodd"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeDashoffset="0"
           strokeLinecap="round"
@@ -198,7 +198,7 @@ const Logo = () => (
           style={{ lineHeight: "1.25" }}
           fill="none"
           fillOpacity="1"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -218,9 +218,9 @@ const Logo = () => (
         <g
           ariaLabel="f"
           style={{ lineHeight: "1.25" }}
-          fill={dark}
+          fill={color.dark}
           fillOpacity="1"
-          stroke={dark}
+          stroke={color.dark}
           strokeDasharray="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -239,7 +239,7 @@ const Logo = () => (
           <path
             d="M52.821 377.213V360.33h-3.09v-.904h3.09v-2.598c.011-1.644-.107-2.92.704-3.83.644.028.248.053.658.657-.433.379-.474 1.836-.474 3.24v2.53h4.702v.905h-4.702v16.884z"
             style={{}}
-            stroke={dark}
+            stroke={color.dark}
             strokeDasharray="none"
             strokeLinecap="round"
             strokeLinejoin="round"
