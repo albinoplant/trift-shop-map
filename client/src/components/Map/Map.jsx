@@ -64,8 +64,8 @@ const Map = () => {
                 const textLabel = document.createElement('h3');
 
                 textLabel.textContent = item.name;
-                textLabel.style.color = color.primaryDark;
-                marker.appendChild(textLabel);
+                textLabel.style.backgroundColor = color.primary;
+                wrapper.appendChild(textLabel);
                 markerArray.push(newMarker);
             });
             map.on('load', () => {
@@ -76,46 +76,8 @@ const Map = () => {
             });
 
         };
-        // const initializeMarkerClicks = (markers, SELECTED) => {
-        //     for(let i = 0; i < markers.length; i++){
-        //         markers[i].addEventListener('click', (el) => {
-        //             console.log(el.target)
-        //             if(SELECTED===el.target.id){
-        //                 dispatch(markerSelect(false));
-        //                 //el.target.classList.remove('selected');
-                        
-        //                 }
-        //             else if(el.target.id) {
-        //                 dispatch(markerSelect(parseInt(el.target.id)));
-        //                 el.target.classList.add('selected');
-        //             }
-        //         });
-        //         if (markers[i].id!==SELECTED)
-        //             markers[i].classList.remove('selected');
-        //         if (markers[i].id===SELECTED)
-        //             markers[i].classList.add('selected');
-        //     }
-        // }
-        
-
-        // const flyToMarker = (map, SELECTED) => {
-            
-        //     for(let i =0 ; i< data.length; i++){
-        //         const shop = data[i];
-
-        //         if(shop.id === SELECTED) 
-        //             map.flyTo({
-        //                 center: shop.geo,
-        //                 zoom: 13
-        //             })
-        //     }
-        // }
         if (!map) initializeMap({ setMap, mapContainer});
-        // if (markers) {
-        //     setMarkers(document.getElementsByClassName('markers'));
-        //     initializeMarkerClicks(markers);
-        //     flyToMarker(map, SELECTED);
-        // };
+
     }, [map, CITY, data, lat, lng, zoom, maxBounds, pitch, markers, SELECTED, dispatch]);
 
     useEffect(()=>{
@@ -143,11 +105,10 @@ const Map = () => {
         }
         const checkMarkers = (markers, SELECTED)=> {
             for(let i = 0; i < markers.length; i++){
-                console.log(typeof markers[i].id, typeof SELECTED)
                 if (parseInt(markers[i].id)!==SELECTED)
-                    markers[i].classList.remove('selected');
+                    markers[i].parentElement.classList.remove('selected');
                 if (parseInt(markers[i].id)===SELECTED){
-                    markers[i].classList.add('selected');}
+                    markers[i].parentElement.classList.add('selected');}
                 }
         }
         if(markers){

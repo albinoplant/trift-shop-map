@@ -22,5 +22,6 @@ const styles =
     fontSize: "200%",
     borderBottom: `solid 2px ${color.primaryDark}`,
     color: 'white',
+    cursor: 'pointer'
   
 }

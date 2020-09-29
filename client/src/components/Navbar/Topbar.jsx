@@ -1,11 +1,14 @@
 import React from 'react';
 import Logo from '../../data/trifto_logo'
 
-const Topbar = ({city}) => {
-  console.log(city);
-    return ( 
+const Topbar = ({city, icon}) => {
+
+  return ( 
       <div className='nav-top'>
-        <Logo />
+        {icon?icon():''}
+        <Logo>
+          <Link/>
+        <Logo/>
         <h1 style={{ 
           fontWeight: '300', 
           fontSize: '1rem', 
@@ -13,7 +16,7 @@ const Topbar = ({city}) => {
           }}
         >{(city?city:"").toLowerCase()}</h1>
       </div>
-     );
+  );
 }
  
 export default Topbar;

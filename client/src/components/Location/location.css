@@ -1,0 +1,22 @@
+#account{
+    display: flex;
+    align-self: center;
+    cursor: pointer;
+}
+#account path:nth-child(2){
+    transition: fill 0.3s ease-out;
+}
+#account:hover path:nth-child(2){
+    fill: rgba(0,0,0,0.3);
+}
+div.hello-box{
+    box-shadow: 0 7px 10px rgba(0,0,0,0.03);
+}
+div.hello-box p{
+    display: table;
+    margin: auto;
+}
+h1{
+    display: block;
+    text-align: center;
+}

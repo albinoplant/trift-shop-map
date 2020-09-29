@@ -7,20 +7,25 @@
     cursor: pointer;
     transition: height 1s;
 }
-.markers h3{ 
+.mapboxgl-marker h3{ 
     /* TODO: make the h3 display over the svg marker-icons */
-    position: absolute;
+    position: relative;
+    z-index: 3;
     display: none;
     text-align: center;
     white-space: nowrap;
     top:-50px;
-    /* color:black!important; */
     font-weight:bold;
-    text-shadow:
-   -1px -1px 0 #fff,  
-    1px -1px 0 #fff,
-    -1px 1px 0 #fff,
-     1px 1px 0 #fff;
+    border: 3px dotted rgba(0,0,0,0.5) ;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+    padding: 0.2rem;
+    color: white;
+    /* text-shadow:
+   -1px -1px 0 #ccc,  
+    1px -1px 0 #ccc,
+    -1px 1px 0 #ccc,
+     1px 1px 0 #ccc; */
 }
 div.mapboxgl-marker{
     pointer-events: none;

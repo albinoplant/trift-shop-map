@@ -4,6 +4,9 @@ import ButtonMain from "../Button/ButtonMain";
 import { useDispatch} from "react-redux";
 import { initialLocation, fetchShopsIfNeeded } from "../../store/actions";
 import { SZCZECIN } from "../../data/cities";
+import icon from '../../data/account.jsx';
+import './location.css';
+import colors from '../../data/color';
 
 const Location = () => {
   
@@ -16,15 +19,15 @@ const Location = () => {
 
   return (
     <React.Fragment>
-      <Topbar/>
-      <div
+      <Topbar icon={icon}/>
+      <div className="hello-box"
         style={{
           padding: "1rem",
-          backgroundColor: "rgba(0,0,0,0.05)",
+          backgroundColor: `${colors.background}`,
           zIndex: "0",
         }}
       >
-        <h1>Trifto is your trift guide</h1>
+        <h1><span style={{color:`${colors.primary}`}}>Trifto </span> is your trift guide</h1>
         <p>
           It brings you all necessery info like where are second hands in your
           town, price per kilo or day when new stuff arives!{" "}
@@ -36,8 +39,7 @@ const Location = () => {
         <ButtonMain onClick={() => handleLocation(SZCZECIN)}>
           Szczecin
         </ButtonMain>
-        <ButtonMain>test</ButtonMain>
-        <ButtonMain>test</ButtonMain>
+        <ButtonMain>more cities SOON</ButtonMain>
       </div>
     </React.Fragment>
   );
