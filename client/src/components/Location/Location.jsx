@@ -5,6 +5,7 @@ import { useDispatch} from "react-redux";
 import { initialLocation, fetchShopsIfNeeded } from "../../store/actions";
 import { SZCZECIN } from "../../data/cities";
 import icon from '../../data/account.jsx';
+import Drawing from '../../data/drawing';
 import './location.css';
 import colors from '../../data/color';
 
@@ -25,21 +26,23 @@ const Location = () => {
           padding: "1rem",
           backgroundColor: `${colors.background}`,
           zIndex: "0",
+          paddingBottom: "2rem"
         }}
       >
+        <Drawing style={{display:"table",margin:"auto"}}/>
         <h1><span style={{color:`${colors.primary}`}}>Trifto </span> is your trift guide</h1>
-        <p>
-          It brings you all necessery info like where are second hands in your
-          town, price per kilo or day when new stuff arives!{" "}
+        <p className="hello-description">
+          It brings you all the necessery info like where are second hands in your
+          area, price per kilo or day when new stuff arives!{" "}
         </p>
       </div>
-      <div style={{ textAlign: "center", margin: "5rem auto" }}>
+      <div className="hello-area" >
         <h2>Where are we?</h2>
         <h3 style={{ fontWeight: "300" }}>select the city:</h3>
-        <ButtonMain onClick={() => handleLocation(SZCZECIN)}>
+        <ButtonMain to="/cockpit" onClick={() => handleLocation(SZCZECIN)}>
           Szczecin
         </ButtonMain>
-        <ButtonMain>more cities SOON</ButtonMain>
+        <ButtonMain className="soon">more cities SOON</ButtonMain>
       </div>
     </React.Fragment>
   );

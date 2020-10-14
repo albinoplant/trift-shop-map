@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 import Logo from '../../data/trifto_logo'
 
 const Topbar = ({city, icon}) => {
@@ -6,9 +7,7 @@ const Topbar = ({city, icon}) => {
   return ( 
       <div className='nav-top'>
         {icon?icon():''}
-        <Logo>
-          <Link/>
-        <Logo/>
+        <Link to="/"><Logo/></Link>
         <h1 style={{ 
           fontWeight: '300', 
           fontSize: '1rem', 
@@ -16,6 +15,7 @@ const Topbar = ({city, icon}) => {
           }}
         >{(city?city:"").toLowerCase()}</h1>
       </div>
+      
   );
 }
  
