@@ -5,6 +5,7 @@ export const MARKER_SELECTED = 'MARKER_SELECTED'
 export const SELECT_LOCATION = 'SELECT_LOCATION'
 export const REQUEST_LOCATION_SHOPS = 'REQUEST_LOCATION_SHOPS'
 export const RECEIVE_LOCATION_SHOPS = 'RECEIVE_LOCATION_SHOPS'
+export const USER_LOGGED = 'USER_LOGGED'
 
 export const initialLocation = (location) => {
     return {
@@ -62,5 +63,12 @@ export function fetchShopsIfNeeded(location) {
         } else {
             return Promise.resolve()
         }
+    }
+}
+
+export function loggUser(id) {
+    return{
+        type: USER_LOGGED,
+        payload: id
     }
 }

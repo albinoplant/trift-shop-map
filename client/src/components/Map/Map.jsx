@@ -7,7 +7,6 @@ import { markerSelect } from '../../store/actions';
 import color from '../../data/color';
 
 const Map = () => {
-
     const dispatch = useDispatch();
 
     const { lat, lng, zoom, maxBounds, pitch, name } = useSelector(state => state.location);
@@ -19,14 +18,14 @@ const Map = () => {
     const mapContainer = useRef(null);
     const data = useSelector(state => state.shopsByLocation[CITY].items);
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoiYWxiaW5vcGxhbnQiLCJhIjoiY2s1cmQyZmNmMDA4ZDNubG9raTMwYWc2NCJ9.aGLZ5QbPXy528k8UMWyjRw';
+    mapboxgl.accessToken = process.env.REACT_APP_MAPBOXGL_ACCESS_TOKEN;
 
     useEffect(() => {
 
         const initializeMap = ({ setMap, mapContainer }) => {
             const map = new mapboxgl.Map({
                 container: mapContainer.current,
-                style: 'mapbox://styles/albinoplant/ck5s0v7we22rv1ipi6j3yenpw',
+                style:  process.env.REACT_APP_MAPBOXGL_MAP_STYLE,
                 center: [lng, lat],
                 zoom,
                 maxBounds,
