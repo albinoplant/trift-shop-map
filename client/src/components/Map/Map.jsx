@@ -127,7 +127,8 @@ const Map = () => {
                     top: "0",
                     width: "100%",
                     bottom: "0",
-                    minHeight: "300px"
+                    height: "100%",
+                    //minHeight: "300px"
                     // borderRadius: "1rem"
                 }}
             />

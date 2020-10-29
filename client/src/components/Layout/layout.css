@@ -1,6 +1,6 @@
 
 .layout{
-    max-height:100vh;
+    height:100vh;
     display:grid; 
     grid-template-columns:1fr; 
     grid-template-rows:1fr 1fr 0rem;
@@ -8,6 +8,7 @@
 }
 @media (min-width: 770px){
     .layout{
+        max-height: 100vh;
         grid-template-columns: 1fr 1fr 0rem;
         grid-template-rows: 1fr;       
     } 
