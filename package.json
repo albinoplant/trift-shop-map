@@ -11,8 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node server",
     "client": "yarn --cwd client start",
-    "server": "nodemon server",
-    "heroku-postbuild": "npm install && cd client && yarn install --only-dev && yarn run build"
+    "server": "nodemon server"
   },
   "repository": {
     "type": "git",
