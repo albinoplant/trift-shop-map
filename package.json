@@ -12,7 +12,7 @@
     "start": "node server",
     "client": "yarn --cwd client start",
     "server": "nodemon server",
-    "heroku-postbuild": "npm install && cd client && yarn install --only-dev && npm run build"
+    "heroku-postbuild": "npm install && cd client && yarn install --only-dev && yarn run build"
   },
   "repository": {
     "type": "git",
