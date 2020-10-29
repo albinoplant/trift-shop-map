@@ -1,7 +1,7 @@
 var { Pool } = require('pg');
 
 const CONNECTION_STRING = process.env.DATABASE_URL || 'postgresql://admin:secret@localhost:5432/trifto-db';
-const SSL = process.env.NODE_ENV === 'production';
+const SSL = true; //process.env.NODE_ENV === 'production';
 
 class Database {
 

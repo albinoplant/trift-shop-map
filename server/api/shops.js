@@ -22,5 +22,6 @@ router.post('/', function (req, res) {
         
     });
 });
+router.post('/singup',)
 
 module.exports = router;
