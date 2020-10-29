@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node":"12.4.0",
-    "npm":"6.13.0"
-    },
+    "node": "12.4.0",
+    "npm": "6.13.0"
+  },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "node server/index.js",
     "client": "yarn --cwd client start",
     "server": "nodemon server"
   },
