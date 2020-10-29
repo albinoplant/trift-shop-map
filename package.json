@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "node server/index.js",
+    "start": "node server",
     "client": "yarn --cwd client start",
     "server": "nodemon server"
   },
