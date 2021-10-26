@@ -1,15 +1,14 @@
-import React from 'react';
-import Cockpit from '../Cockpit/Cockpit'
-import Location from '../Location/Location'
-import { useSelector } from 'react-redux'
+import React from "react";
+import Cockpit from "../Layout/Cockpit/Cockpit";
+import Location from "components/Location";
+import useGeo from "hooks/useGeo";
 
-function App() { 
-  const LOCATION = useSelector(state => state.location);
-
+function App() {
+  const { location: LOCATION } = useGeo();
   return (
     <React.Fragment>
-      {!LOCATION && <Location/>}
-      {LOCATION &&  <Cockpit/>}
+      {!LOCATION && <Location />}
+      {!!LOCATION && <Cockpit />}
     </React.Fragment>
   );
 }

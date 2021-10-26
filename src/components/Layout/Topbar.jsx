@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../data/trifto_logo'
+import Logo from 'data/trifto_logo'
 
 const Topbar = () => {
     return ( 

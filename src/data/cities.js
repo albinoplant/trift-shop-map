@@ -1,11 +1,13 @@
 const SZCZECIN = {
-    name: 'szczecin',
-    lng: 14.550,
-    lat: 53.430,
-    zoom: 15,
-    maxBounds: [[14.450, 53.380], [14.650, 53.480]],
-    pitch: 20
-}
+  name: "szczecin",
+  center: [14.55, 53.43],
+  zoom: 15,
+  maxBounds: [
+    [14.45, 53.38],
+    [14.65, 53.48],
+  ],
+  pitch: 20,
+};
 export default {
-    SZCZECIN
-}
+  SZCZECIN,
+};
