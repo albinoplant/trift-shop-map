@@ -1,15 +1,12 @@
 import React from "react";
-import Cockpit from "../Layout/Cockpit/Cockpit";
-import Location from "components/Location";
-import useGeo from "hooks/useGeo";
+import {GeoProvider} from 'contexts/GeoContext';
+import Router from 'router';
 
 function App() {
-  const { location: LOCATION } = useGeo();
-  return (
-    <React.Fragment>
-      {!LOCATION && <Location />}
-      {!!LOCATION && <Cockpit />}
-    </React.Fragment>
+  return (  
+  <GeoProvider>
+    <Router/>
+  </GeoProvider>
   );
 }
 
