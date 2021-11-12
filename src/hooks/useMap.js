@@ -12,6 +12,7 @@ const useMap = () => {
     location: { maxBounds, pitch, center },
     selectedMarker,
     setSelectedMarker,
+    shops,
   } = useGeo();
   mapboxgl.accessToken =
     "pk.eyJ1IjoiYWxiaW5vcGxhbnQiLCJhIjoiY2s1cmQyZmNmMDA4ZDNubG9raTMwYWc2NCJ9.aGLZ5QbPXy528k8UMWyjRw";
@@ -22,7 +23,7 @@ const useMap = () => {
     if (markers) {
       setMarkers(document.getElementsByClassName("markers"));
       initializeMarkerClicks(markers, selectedMarker, setSelectedMarker);
-      flyToMarker(map, selectedMarker);
+      flyToMarker(map, selectedMarker, shops);
     }
   }, [
     map,
@@ -32,21 +33,20 @@ const useMap = () => {
     center,
     selectedMarker,
     setSelectedMarker,
+    shops,
   ]);
 
   return { mapContainer, handleMap };
 };
-const flyToMarker = (map, selectedMarker) => {
-  const data = require("data/szczecin.json");
-  for (let i = 0; i < data.length; i++) {
-    const shop = data[i];
-
-    if (shop.id === selectedMarker)
+const flyToMarker = (map, selectedMarker, shops) => {
+  shops.forEach((shop) => {
+    if (shop.id === selectedMarker.id) {
       map.flyTo({
         center: shop.geo,
         zoom: 15,
       });
-  }
+    }
+  });
 };
 const initializeMarkerClicks = (markers, selectedMarker, setSelectedMarker) => {
   for (let i = 0; i < markers.length; i++) {
@@ -57,10 +57,10 @@ const initializeMarkerClicks = (markers, selectedMarker, setSelectedMarker) => {
     }
     markers[i].addEventListener("click", (el) => {
       if (selectedMarker === el.target.id) {
-        setSelectedMarker(false);
+        setSelectedMarker({ id: null });
         el.target.classList.remove("selected");
       } else {
-        setSelectedMarker(el.target.id);
+        setSelectedMarker({ id: el.target.id });
         el.target.classList.add("selected");
       }
     });

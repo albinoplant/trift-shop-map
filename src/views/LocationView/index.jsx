@@ -1,5 +1,6 @@
 import React from "react";
-import ButtonMain from "components/Button/ButtonMain";
+// import ButtonMain from "components/Button/ButtonMain";
+import { Button } from "@mui/material";
 import cities from "data/cities";
 import useGeo from "hooks/useGeo";
 import { useHistory } from "react-router-dom";
@@ -33,12 +34,15 @@ const Location = () => {
         <h2>Where are we?</h2>
         <h3 style={{ fontWeight: "300" }}>select the city:</h3>
         {cities.map((city) => (
-          <ButtonMain key={city.name} onClick={() => handleLocation(city)}>
+          <Button
+            color="secondary"
+            variant="contained"
+            key={city.name}
+            onClick={() => handleLocation(city)}
+          >
             {city.name}
-          </ButtonMain>
+          </Button>
         ))}
-        <ButtonMain>test</ButtonMain>
-        <ButtonMain>test</ButtonMain>
       </div>
     </React.Fragment>
   );
