@@ -5,25 +5,24 @@ import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import "./layout.css";
 import Container from "@mui/material/Container";
 import Drawer, { DrawerHeader } from "components/Drawer";
 import { useTheme } from "@mui/material/styles";
 import Logo from "data/trifto_logo";
-
+import useLayout from "hooks/useLayout";
 
 const Layout = ({ children, nav }) => {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(true);
+  const { isOpen, setIsOpen } = useLayout();
 
   const handleDrawerToggle = () => {
-    setOpen((was) => !was);
+    setIsOpen((was) => !was);
     const nIntervId = setInterval(() => {
       window.dispatchEvent(new Event("resize"));
     }, 10);
     setTimeout(() => {
       clearInterval(nIntervId);
-    }, theme.transitions.duration.enteringScreen + 40);
+    }, theme.transitions.duration.enteringScreen + 50);
   };
 
   return (
@@ -35,17 +34,15 @@ const Layout = ({ children, nav }) => {
       <Box
         sx={{ display: "flex", height: "100%", flexDirection: "row-reverse" }}
       >
-        <Drawer variant="permanent" open={open} anchor="right">
+        <Drawer variant="permanent" open={isOpen} anchor="right">
           <DrawerHeader>
             <IconButton onClick={handleDrawerToggle}>
-              {open ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+              {isOpen ? <ChevronRightIcon /> : <ChevronLeftIcon />}
             </IconButton>
-            <Logo/>
+            {!!isOpen && <Logo />}
           </DrawerHeader>
           <Divider />
-          <List>
-            {nav}
-          </List>
+          <List>{nav}</List>
           <Divider />
         </Drawer>
         <Box component="main" sx={{ flexGrow: 1 }}>

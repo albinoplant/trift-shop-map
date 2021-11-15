@@ -1,11 +1,5 @@
-import React from "react";
+import LayoutContext from "../contexts/LayoutContext";
+import { useContext } from "react";
 
-const useLayout = () => {
-  const [open, setOpen] = React.useState(true);
-  const toggleOpen = () => { 
-    setOpen(!open)
-  }
-  return [open, toggleOpen];
-};
-
+const useLayout = () => useContext(LayoutContext);
 export default useLayout;

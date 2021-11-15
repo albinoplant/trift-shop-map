@@ -8,9 +8,9 @@ const closedMixin = (theme: Theme): CSSObject => ({
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.enteringScreen,
   }),
-  width: `calc(${theme.spacing(15)} + 1px)`,
+  width: `calc(${theme.spacing(8)} + 1px)`,
   [theme.breakpoints.up("sm")]: {
-    width: `calc(${theme.spacing(15)} + 1px)`,
+    width: `calc(${theme.spacing(8)} + 1px)`,
   },
   overflowX: "hidden",
 });
